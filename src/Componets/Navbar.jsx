@@ -15,7 +15,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className=" bg-white shadow-md z-10 p-3 lg:px-32">
+    <nav className="bg-white shadow-md z-10 p-3 lg:px-32">
       <div className="flex justify-between items-center">
         <div className="font-mono">
           <Link to="/" className="text-2xl">
@@ -23,22 +23,59 @@ export default function Navbar() {
           </Link>
         </div>
         <div className="hidden md:flex space-x-8">
-          <Link to="/Allmovies" className="text-black" onClick={closeMenu}>
-            Car Tyres
-          </Link>
-          <Link to="/People" className="text-black" onClick={closeMenu}>
+          <div className="relative group">
+            <Link
+              to="/Allmovies"
+              className="text-black"
+              onClick={closeMenu}
+            >
+              Car Tyres
+            </Link>
+            <div className="absolute left-0 mt-2 hidden group-hover:block bg-white shadow-lg">
+              <ul className="py-2">
+                <li>
+                  <Link
+                    to="/Allmovies/suv"
+                    className="block px-4 py-2 text-black hover:bg-gray-100"
+                    onClick={closeMenu}
+                  >
+                    SUV Tyres
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/Allmovies/sedan"
+                    className="block px-4 py-2 text-black hover:bg-gray-100"
+                    onClick={closeMenu}
+                  >
+                    Sedan Tyres
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/Allmovies/sport"
+                    className="block px-4 py-2 text-black hover:bg-gray-100"
+                    onClick={closeMenu}
+                  >
+                    Sport Tyres
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <Link to="" className="text-black" onClick={closeMenu}>
             Bike Tyres
           </Link>
-          <Link to="/TV" className="text-black" onClick={closeMenu}>
+          <Link to="" className="text-black" onClick={closeMenu}>
             Tyre Pressure
           </Link>
-          <Link to="/TV" className="text-black" onClick={closeMenu}>
+          <Link to="" className="text-black" onClick={closeMenu}>
             Commercial Tyres
           </Link>
-          <Link to="/TV" className="text-black" onClick={closeMenu}>
+          <Link to="" className="text-black" onClick={closeMenu}>
             Accessories
           </Link>
-          <Link to="/TV" className="text-black" onClick={closeMenu}>
+          <Link to="" className="text-black" onClick={closeMenu}>
             More
           </Link>
         </div>
@@ -67,8 +104,8 @@ export default function Navbar() {
         }`}
       >
         <div className="flex flex-col h-full p-4 space-y-4">
-          <div className="flex justify-between items-center ">
-          <img src="/Images/TP-logo.png" alt="Logo" className="h-8 md:h-10" />
+          <div className="flex justify-between items-center">
+            <img src="/Images/TP-logo.png" alt="Logo" className="h-8 md:h-10" />
             <button
               onClick={toggleMenu}
               className=" text-2xl focus:outline-none"
@@ -78,26 +115,22 @@ export default function Navbar() {
           </div>
           <div className="border border-black"></div>
           <div className="flex flex-col flex-grow">
-            <Link
-              to="/Allmovies"
-              className=" py-2"
-             
-            >
+            <Link to="" className="py-2" onClick={closeMenu}>
               Car Tyres
             </Link>
-            <Link to="/People" className=" py-2" onClick={closeMenu}>
+            <Link to="" className="py-2" onClick={closeMenu}>
               Bike Tyres
             </Link>
-            <Link to="/TV" className="py-2" onClick={closeMenu}>
+            <Link to="" className="py-2" onClick={closeMenu}>
               Tyre Pressure
             </Link>
-            <Link to="/TV" className=" py-2" onClick={closeMenu}>
+            <Link to="" className="py-2" onClick={closeMenu}>
               Commercial Tyres
             </Link>
-            <Link to="/TV" className=" py-2" onClick={closeMenu}>
+            <Link to="" className="py-2" onClick={closeMenu}>
               Accessories
             </Link>
-            <Link to="/TV" className=" py-2" onClick={closeMenu}>
+            <Link to="" className="py-2" onClick={closeMenu}>
               More
             </Link>
           </div>

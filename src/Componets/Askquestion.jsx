@@ -33,7 +33,7 @@ export default function Askquestion() {
             </div>
           ) : (
             <>
-              <form onSubmit={handleSubmit} className="flex gap-2.5">
+              <form onSubmit={handleSubmit} className="flex-col gap-2.5 md:flex">
                 <input
                   type="email"
                   id="newsletter-email"
