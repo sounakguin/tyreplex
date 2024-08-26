@@ -1,17 +1,44 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faTimes, faUser } from "@fortawesome/free-solid-svg-icons";
+import {
+  faBars,
+  faTimes,
+  faUser,
+  faChevronDown,
+} from "@fortawesome/free-solid-svg-icons";
 
 export default function Navbar() {
-  const [isOpen, setIsOpen] = React.useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState(null);
+  const [hideTimeout, setHideTimeout] = useState(null);
 
   const toggleMenu = () => {
-    setIsOpen(!isOpen);
+    setIsMenuOpen(!isMenuOpen);
   };
 
   const closeMenu = () => {
-    setIsOpen(false);
+    setIsMenuOpen(false);
+    setActiveDropdown(null);
+  };
+
+  const showDropdown = (dropdownId) => {
+    if (hideTimeout) {
+      clearTimeout(hideTimeout);
+    }
+    setActiveDropdown(dropdownId);
+  };
+
+  const hideDropdown = () => {
+    setHideTimeout(
+      setTimeout(() => {
+        setActiveDropdown(null);
+      }, 1000)
+    );
+  };
+
+  const toggleDropdownMobile = (dropdownId) => {
+    setActiveDropdown(activeDropdown === dropdownId ? null : dropdownId);
   };
 
   return (
@@ -23,49 +50,126 @@ export default function Navbar() {
           </Link>
         </div>
         <div className="hidden md:flex space-x-8">
-          <div className="relative group">
-            <Link
-              to="/Allmovies"
-              className="text-black"
-              onClick={closeMenu}
-            >
+          <div
+            className="relative group"
+            onMouseEnter={() => showDropdown("carTyres")}
+            onMouseLeave={hideDropdown}
+          >
+            <Link to="" className="text-black flex items-center">
               Car Tyres
             </Link>
-            <div className="absolute left-0 mt-2 hidden group-hover:block bg-white shadow-lg">
-              <ul className="py-2">
-                <li>
-                  <Link
-                    to="/Allmovies/suv"
-                    className="block px-4 py-2 text-black hover:bg-gray-100"
-                    onClick={closeMenu}
-                  >
-                    SUV Tyres
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/Allmovies/sedan"
-                    className="block px-4 py-2 text-black hover:bg-gray-100"
-                    onClick={closeMenu}
-                  >
-                    Sedan Tyres
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/Allmovies/sport"
-                    className="block px-4 py-2 text-black hover:bg-gray-100"
-                    onClick={closeMenu}
-                  >
-                    Sport Tyres
-                  </Link>
-                </li>
-              </ul>
-            </div>
+            {activeDropdown === "carTyres" && (
+              <div className="absolute left-0 mt-2 bg-white shadow-lg w-44 border border-gray-200">
+                <ul className="py-2">
+                  <li>
+                    <Link
+                      to=""
+                      className="block px-4 py-2 text-black hover:bg-gray-200"
+                      onClick={closeMenu}
+                    >
+                      MRF Tyres
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to=""
+                      className="block px-4 py-2 text-black hover:bg-gray-200"
+                      onClick={closeMenu}
+                    >
+                      CEAT Tyres
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to=""
+                      className="block px-4 py-2 text-black hover:bg-gray-200"
+                      onClick={closeMenu}
+                    >
+                      MRF Tyres
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to=""
+                      className="block px-4 py-2 text-black hover:bg-gray-200"
+                      onClick={closeMenu}
+                    >
+                      CEAT Tyres
+                    </Link>
+                  </li><li>
+                    <Link
+                      to=""
+                      className="block px-4 py-2 text-black hover:bg-gray-200"
+                      onClick={closeMenu}
+                    >
+                      MRF Tyres
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to=""
+                      className="block px-4 py-2 text-black hover:bg-gray-200"
+                      onClick={closeMenu}
+                    >
+                      CEAT Tyres
+                    </Link>
+                  </li><li>
+                    <Link
+                      to=""
+                      className="block px-4 py-2 text-black hover:bg-gray-200"
+                      onClick={closeMenu}
+                    >
+                      MRF Tyres
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to=""
+                      className="block px-4 py-2 text-black hover:bg-gray-200"
+                      onClick={closeMenu}
+                    >
+                      CEAT Tyres
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+            )}
           </div>
-          <Link to="" className="text-black" onClick={closeMenu}>
-            Bike Tyres
-          </Link>
+          {/* Second menu */}
+          <div
+            className="relative group"
+            onMouseEnter={() => showDropdown("bikeTyres")}
+            onMouseLeave={hideDropdown}
+          >
+            <Link to="" className="text-black flex items-center">
+              Bike Tyres
+            </Link>
+            {activeDropdown === "bikeTyres" && (
+              <div className="absolute left-0 mt-2 bg-white shadow-lg w-44 border border-gray-200">
+                <ul className="py-2">
+                  <li>
+                    <Link
+                      to=""
+                      className="block px-4 py-2 text-black hover:bg-gray-200"
+                      onClick={closeMenu}
+                    >
+                      MRF Tyres
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to=""
+                      className="block px-4 py-2 text-black hover:bg-gray-200"
+                      onClick={closeMenu}
+                    >
+                      CEAT Tyres
+                    </Link>
+                  </li>
+                  {/* Add more items as needed */}
+                </ul>
+              </div>
+            )}
+          </div>
           <Link to="" className="text-black" onClick={closeMenu}>
             Tyre Pressure
           </Link>
@@ -87,12 +191,12 @@ export default function Navbar() {
               onClick={toggleMenu}
               className="focus:outline-none text-black"
             >
-              <FontAwesomeIcon icon={isOpen ? faTimes : faBars} />
+              <FontAwesomeIcon icon={isMenuOpen ? faTimes : faBars} />
             </button>
           </div>
         </div>
       </div>
-      {isOpen && (
+      {isMenuOpen && (
         <div
           className="fixed inset-0 bg-black bg-opacity-50 z-20"
           onClick={closeMenu}
@@ -100,7 +204,7 @@ export default function Navbar() {
       )}
       <div
         className={`fixed top-0 right-0 bg-white z-30 w-full h-auto transition-transform duration-300 ease-in-out ${
-          isOpen ? "translate-y-0" : "-translate-y-full"
+          isMenuOpen ? "translate-y-0" : "-translate-y-full"
         }`}
       >
         <div className="flex flex-col h-full p-4 space-y-4">
@@ -108,19 +212,98 @@ export default function Navbar() {
             <img src="/Images/TP-logo.png" alt="Logo" className="h-8 md:h-10" />
             <button
               onClick={toggleMenu}
-              className=" text-2xl focus:outline-none"
+              className="text-2xl focus:outline-none"
             >
               <FontAwesomeIcon icon={faTimes} />
             </button>
           </div>
           <div className="border border-black"></div>
           <div className="flex flex-col flex-grow">
-            <Link to="" className="py-2" onClick={closeMenu}>
-              Car Tyres
-            </Link>
-            <Link to="" className="py-2" onClick={closeMenu}>
-              Bike Tyres
-            </Link>
+            <div className="relative">
+              <button
+                className="py-2 flex items-center justify-between w-full text-left"
+                onClick={() => toggleDropdownMobile("carTyres")}
+              >
+                Car Tyres
+                <FontAwesomeIcon icon={faChevronDown} className="ml-2" />
+              </button>
+              {activeDropdown === "carTyres" && (
+                <div className="bg-white shadow-lg w-full border border-gray-200">
+                  <ul className="py-2">
+                    <li>
+                      <Link
+                        to=""
+                        className="block px-4 py-2 text-black hover:bg-gray-200"
+                        onClick={closeMenu}
+                      >
+                        SUV Tyres
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        to=""
+                        className="block px-4 py-2 text-black hover:bg-gray-200"
+                        onClick={closeMenu}
+                      >
+                        Sedan Tyres
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        to=""
+                        className="block px-4 py-2 text-black hover:bg-gray-200"
+                        onClick={closeMenu}
+                      >
+                        Sport Tyres
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
+              )}
+            </div>
+            <div className="relative">
+              <button
+                className="py-2 flex items-center justify-between w-full text-left"
+                onClick={() => toggleDropdownMobile("bikeTyres")}
+              >
+                Bike Tyres
+                <FontAwesomeIcon icon={faChevronDown} className="ml-2" />
+              </button>
+              {activeDropdown === "bikeTyres" && (
+                <div className="bg-white shadow-lg w-full border border-gray-200">
+                  <ul className="py-2">
+                    <li>
+                      <Link
+                        to=""
+                        className="block px-4 py-2 text-black hover:bg-gray-200"
+                        onClick={closeMenu}
+                      >
+                        MRF Tyres
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        to=""
+                        className="block px-4 py-2 text-black hover:bg-gray-200"
+                        onClick={closeMenu}
+                      >
+                        CEAT Tyres
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        to=""
+                        className="block px-4 py-2 text-black hover:bg-gray-200"
+                        onClick={closeMenu}
+                      >
+                        Apollo Tyres
+                      </Link>
+                    </li>
+                    {/* Add more items as needed */}
+                  </ul>
+                </div>
+              )}
+            </div>
             <Link to="" className="py-2" onClick={closeMenu}>
               Tyre Pressure
             </Link>
