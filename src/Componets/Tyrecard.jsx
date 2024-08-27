@@ -48,46 +48,46 @@ const TyreCard = () => {
 
   return (
     <div className="bg-white h-auto w-full md:w-11/12 lg:w-11/12 mx-auto p-4 rounded-md shadow-md border border-gray-300">
-      {/* Search, Filter, and Sort Controls */}
-      <div className="flex flex-col md:flex-row justify-between mb-4">
-        <select
-          onChange={handleDropChange}
-          value={drop}
-          className="p-2 border rounded mb-2 md:mb-0"
-        >
-          <option value="">Filter By</option>
-          <option value="Apollo">Apollo</option>
-          <option value="MRF">MRF</option>
-          <option value="Bridgestone">Bridgestone</option>
-          <option value="CEAT">CEAT</option>
-        </select>
-        <select
-          onChange={handleSortOrderChange}
-          value={sortOrder}
-          className="p-2 border rounded mb-2 md:mb-0"
-        >
-          <option value="">Sort By Price</option>
-          <option value="lowToHigh">Low to High</option>
-          <option value="highToLow">High to Low</option>
-        </select>
-        <div className="flex rounded-md border-2 border-blue-500 overflow-hidden max-w-md mx-auto font-[sans-serif]">
-          <input
-            type="text"
-            placeholder="Search Something..."
-            className="w-full outline-none bg-white text-gray-600 text-sm px-4 py-3"
-            value={query}
-            onChange={handleSearchChange}
-          />
-          <button
-            type="button"
-            className="flex items-center justify-center bg-[#007bff] px-5"
+      <div className="hidden md:block">
+        <div className="flex flex-col md:flex-row justify-between mb-4 ">
+          <select
+            onChange={handleDropChange}
+            value={drop}
+            className="p-2 border rounded mb-2 md:mb-0"
           >
-            <FontAwesomeIcon icon={faSearch} className="text-white" />
-          </button>
+            <option value="">Filter By</option>
+            <option value="Apollo">Apollo</option>
+            <option value="MRF">MRF</option>
+            <option value="Bridgestone">Bridgestone</option>
+            <option value="CEAT">CEAT</option>
+          </select>
+          <select
+            onChange={handleSortOrderChange}
+            value={sortOrder}
+            className="p-2 border rounded mb-2 md:mb-0"
+          >
+            <option value="">Sort By Price</option>
+            <option value="lowToHigh">Low to High</option>
+            <option value="highToLow">High to Low</option>
+          </select>
+          <div className="flex rounded-md border-2 border-blue-500 overflow-hidden max-w-md mx-auto font-[sans-serif]">
+            <input
+              type="text"
+              placeholder="Search Something..."
+              className="w-full outline-none bg-white text-gray-600 text-sm px-4 py-3"
+              value={query}
+              onChange={handleSearchChange}
+            />
+            <button
+              type="button"
+              className="flex items-center justify-center bg-[#007bff] px-5"
+            >
+              <FontAwesomeIcon icon={faSearch} className="text-white" />
+            </button>
+          </div>
         </div>
       </div>
 
-      {/* Tyre Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {filterData.slice(0, visibleItems).map((tyre, index) => (
           <div
@@ -143,7 +143,6 @@ const TyreCard = () => {
         </div>
       )}
 
-      {/* Mobile Bottom Menu */}
       <div className="fixed inset-x-0 bottom-0 md:hidden bg-white shadow-lg border-t border-gray-300 flex justify-around items-center p-2">
         <button
           onClick={() => setIsFilterOpen(!isFilterOpen)}
@@ -161,12 +160,9 @@ const TyreCard = () => {
         </button>
       </div>
 
-      {/* Filter Modal for Mobile */}
-      {/* Filter Modal for Mobile */}
       {isFilterOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
           <div className="bg-white w-11/12 p-4 rounded shadow-lg">
-          
             <select
               value={drop}
               onChange={handleDropChange}
@@ -178,16 +174,13 @@ const TyreCard = () => {
               <option value="Bridgestone">Bridgestone</option>
               <option value="CEAT">CEAT</option>
             </select>
-            
           </div>
         </div>
       )}
 
-      {/* Sort Modal for Mobile */}
       {isSortOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
           <div className="bg-white w-11/12 p-4 rounded shadow-lg">
-          
             <select
               value={sortOrder}
               onChange={handleSortOrderChange}
@@ -197,7 +190,6 @@ const TyreCard = () => {
               <option value="lowToHigh">Low to High</option>
               <option value="highToLow">High to Low</option>
             </select>
-           
           </div>
         </div>
       )}
