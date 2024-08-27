@@ -12,7 +12,7 @@ export default function Askquestion() {
 
   return (
     <div
-      className="bg-cover bg-center mt-0 md:mt-5 md:mb-5 h-auto text-white w-full md:w-11/12 lg:w-11/12 mx-auto p-4 rounded-md shadow-md border border-gray-300"
+      className="bg-cover bg-center mt-5 mb-5 h-auto text-white w-full md:w-11/12 lg:w-11/12 mx-auto p-4 rounded-md shadow-md border border-gray-300"
       style={{
         backgroundImage: `url('/Images/opi.jpeg')`,
       }}
@@ -31,7 +31,7 @@ export default function Askquestion() {
             </div>
           ) : (
             <>
-              <form onSubmit={handleSubmit} className="flex flex-col md:flex-row items-center gap-4">
+              <form onSubmit={handleSubmit} className="flex flex-col md:flex-row items-center gap-2">
                 <input
                   type="email"
                   id="newsletter-email"
@@ -43,7 +43,7 @@ export default function Askquestion() {
                 />
                 <button
                   type="submit"
-                  className="bg-[#989494] text-white cursor-pointer p-2.5 text-[16px] border-none rounded-md hover:bg-[#756d6d] w-full md:w-auto"
+                  className="bg-[#989494] border border-white text-white cursor-pointer p-2.5 text-[16px] rounded-md hover:bg-[#756d6d] w-full md:w-auto"
                 >
                   Ask me now
                 </button>

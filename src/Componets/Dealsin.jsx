@@ -25,7 +25,7 @@ export default function Dealsin() {
 
   return (
     <div className="bg-white mt-0 md:mt-5 h-auto w-full md:w-11/12 lg:w-11/12 mx-auto p-4 rounded-md shadow-md border border-gray-300">
-      <p className="text-lg font-semibold mb-4">Deals in</p>
+      <p className="text-lg font-semibold pb-4">Deals in</p>
       <div>
         <MultiCarousel
           responsive={responsive1}

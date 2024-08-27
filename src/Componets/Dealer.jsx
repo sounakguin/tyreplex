@@ -3,7 +3,7 @@ import React from "react";
 export default function Dealer() {
   return (
     <div className="bg-white mt-0 md:mt-5 h-auto w-full md:w-11/12 lg:w-11/12 mx-auto p-4 rounded-md shadow-md border border-gray-300">
-    <p className="text-lg font-semibold mb-2">Services offered by this dealer</p>
+    <p className="text-lg font-semibold pb-2">Services offered by this dealer</p>
     <div className="flex flex-col">
       <div className="flex flex-wrap gap-4"> 
         <div className="flex-col max-w-sm bg-white border p-4 border-gray-300 shadow-lg rounded-lg overflow-hidden flex-1 cursor-pointer flex items-center justify-center text-center">

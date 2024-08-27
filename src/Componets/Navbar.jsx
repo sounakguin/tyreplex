@@ -85,7 +85,7 @@ export default function Navbar() {
                       className="block px-4 py-2 text-black hover:bg-gray-200"
                       onClick={closeMenu}
                     >
-                      MRF Tyres
+                      Goodyear Tyres
                     </Link>
                   </li>
                   <li>
@@ -94,15 +94,7 @@ export default function Navbar() {
                       className="block px-4 py-2 text-black hover:bg-gray-200"
                       onClick={closeMenu}
                     >
-                      CEAT Tyres
-                    </Link>
-                  </li><li>
-                    <Link
-                      to=""
-                      className="block px-4 py-2 text-black hover:bg-gray-200"
-                      onClick={closeMenu}
-                    >
-                      MRF Tyres
+                      Apollo Tyres
                     </Link>
                   </li>
                   <li>
@@ -111,15 +103,7 @@ export default function Navbar() {
                       className="block px-4 py-2 text-black hover:bg-gray-200"
                       onClick={closeMenu}
                     >
-                      CEAT Tyres
-                    </Link>
-                  </li><li>
-                    <Link
-                      to=""
-                      className="block px-4 py-2 text-black hover:bg-gray-200"
-                      onClick={closeMenu}
-                    >
-                      MRF Tyres
+                      Bridgestone Tyres
                     </Link>
                   </li>
                   <li>
@@ -128,7 +112,25 @@ export default function Navbar() {
                       className="block px-4 py-2 text-black hover:bg-gray-200"
                       onClick={closeMenu}
                     >
-                      CEAT Tyres
+                      JK Tyres
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to=""
+                      className="block px-4 py-2 text-black hover:bg-gray-200"
+                      onClick={closeMenu}
+                    >
+                      Michelin Tyres
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to=""
+                      className="block px-4 py-2 text-black hover:bg-gray-200"
+                      onClick={closeMenu}
+                    >
+                      All car Tyres
                     </Link>
                   </li>
                 </ul>
@@ -165,7 +167,60 @@ export default function Navbar() {
                       CEAT Tyres
                     </Link>
                   </li>
-                  {/* Add more items as needed */}
+                  <li>
+                    <Link
+                      to=""
+                      className="block px-4 py-2 text-black hover:bg-gray-200"
+                      onClick={closeMenu}
+                    >
+                      Apollo Tyres
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to=""
+                      className="block px-4 py-2 text-black hover:bg-gray-200"
+                      onClick={closeMenu}
+                    >
+                      Bridgestone Tyres
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to=""
+                      className="block px-4 py-2 text-black hover:bg-gray-200"
+                      onClick={closeMenu}
+                    >
+                      JK Tyres
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to=""
+                      className="block px-4 py-2 text-black hover:bg-gray-200"
+                      onClick={closeMenu}
+                    >
+                      Michelin Tyres
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to=""
+                      className="block px-4 py-2 text-black hover:bg-gray-200"
+                      onClick={closeMenu}
+                    >
+                      Pirelli Tyres
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to=""
+                      className="block px-4 py-2 text-black hover:bg-gray-200"
+                      onClick={closeMenu}
+                    >
+                      All bike Tyres
+                    </Link>
+                  </li>
                 </ul>
               </div>
             )}
@@ -176,6 +231,21 @@ export default function Navbar() {
           <Link to="" className="text-black" onClick={closeMenu}>
             Commercial Tyres
           </Link>
+          {activeDropdown === "commercialTyres" && (
+              <div className="absolute left-0 mt-2 bg-white shadow-lg w-44 border border-gray-200">
+                <ul className="py-2">
+                  <li>
+                    <Link
+                      to=""
+                      className="block px-4 py-2 text-black hover:bg-gray-200"
+                      onClick={closeMenu}
+                    >
+                      MRF Tyres
+                    </Link>
+                  </li>
+                  </ul>
+                  </div>
+          )}
           <Link to="" className="text-black" onClick={closeMenu}>
             Accessories
           </Link>

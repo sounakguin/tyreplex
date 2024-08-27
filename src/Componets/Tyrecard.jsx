@@ -6,6 +6,7 @@ import {
   faFilter,
   faSort,
   faStar,
+  faChevronDown
 } from "@fortawesome/free-solid-svg-icons";
 
 const ITEMS_PER_PAGE = 12;
@@ -53,6 +54,9 @@ const TyreCard = () => {
 
   return (
     <div className="bg-white mt-0 md:mt-5 h-auto w-full md:w-11/12 lg:w-11/12 mx-auto p-4 rounded-md shadow-md border border-gray-300">
+      <p className="text-lg font-semibold pb-6">
+      Tyres sold by this Dealer
+      </p>
       <div className="hidden md:block">
         <div className="flex flex-col md:flex-row justify-between mb-4 ">
           <div className="flex justify-start md:pl-3 ">
@@ -142,9 +146,10 @@ const TyreCard = () => {
         <div className="mt-4 text-center">
           <button
             onClick={handleLoadMore}
-            className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors"
+            className="border border-blue-500 text-black hover:text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors"
           >
             View More
+            <FontAwesomeIcon icon={faChevronDown} className="pl-2"/>
           </button>
         </div>
       )}
