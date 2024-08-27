@@ -96,7 +96,7 @@ export default function Header() {
                   src="/Images/data.jpg"
                   alt="Exterior view of Shree Hemkunt Tyres"
                   loading="lazy"
-                  className="md:h-52 md:w-auto border border-black rounded-xl"
+                  className="md:h-52 md:w-auto w-full border border-black rounded-xl"
                 />
               </div>
               <div className="px-2">
@@ -104,7 +104,7 @@ export default function Header() {
                   src="/Images/data2.jpg"
                   alt="Service in progress at Shree Hemkunt Tyres"
                   loading="lazy"
-                  className="md:h-52 md:w-auto  border-black rounded-xl"
+                  className="md:h-52 md:w-auto w-full border-black rounded-xl"
                 />
               </div>
               <div className="px-2">
@@ -112,7 +112,7 @@ export default function Header() {
                   src="/Images/data1.jpg"
                   alt="Interior view of Shree Hemkunt Tyres"
                   loading="lazy"
-                  className="md:h-52 md:w-auto  border-black rounded-xl"
+                  className="md:h-52 md:w-auto w-full border-black rounded-xl"
                 />
               </div>
               <div className="px-2">
@@ -120,7 +120,7 @@ export default function Header() {
                   src="/Images/data2.jpg"
                   alt="Service in progress at Shree Hemkunt Tyres"
                   loading="lazy"
-                  className="md:h-52 md:w-auto  border-black rounded-xl"
+                  className="md:h-52 md:w-auto w-full border-black rounded-xl"
                 />
               </div>
             </MultiCarousel>
@@ -139,8 +139,11 @@ export default function Header() {
             arrows={false}
             autoPlaySpeed={2000}
             transitionDuration={5000}
+            swipeable={true}
+            draggable={true}
             removeArrowOnDeviceType={["tablet", "mobile"]}
             className="carousel"
+
           >
             {reviews.map((details, index) => (
               <div key={index} className="px-2">

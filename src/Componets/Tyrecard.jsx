@@ -143,7 +143,7 @@ const TyreCard = () => {
         </div>
       )}
 
-      <div className="fixed inset-x-0 bottom-0 md:hidden bg-gray-300 shadow-lg border-t border-black flex justify-around items-center p-2">
+      <div className="fixed inset-x-0 bottom-0 md:hidden bg-gray-300 shadow-lg border-t border-black flex justify-around items-center p-2 z-10">
         <button
           onClick={() => setIsFilterOpen(!isFilterOpen)}
           className="text-black"
@@ -161,7 +161,7 @@ const TyreCard = () => {
       </div>
 
       {isFilterOpen && (
-        <div className="fixed inset-0 bg-black flex justify-center items-center z-50">
+        <div className="fixed inset-0 bg-white flex justify-center items-center z-50">
           <div className="bg-white w-11/12 p-4 rounded shadow-lg">
             <h3 className="text-lg font-semibold mb-4">Filter By Brand</h3>
             <select
@@ -186,7 +186,7 @@ const TyreCard = () => {
       )}
 
       {isSortOpen && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+        <div className="fixed inset-0 bg-white flex justify-center items-center z-50">
           <div className="bg-white w-11/12 p-4 rounded shadow-lg">
             <h3 className="text-lg font-semibold mb-4">Sort By Price</h3>
             <select
