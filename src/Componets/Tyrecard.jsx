@@ -1,7 +1,12 @@
 import React, { useState } from "react";
 import tyres from "./Tyres.json";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch, faFilter, faSort } from "@fortawesome/free-solid-svg-icons";
+import {
+  faSearch,
+  faFilter,
+  faSort,
+  faStar,
+} from "@fortawesome/free-solid-svg-icons";
 
 const ITEMS_PER_PAGE = 12;
 
@@ -90,13 +95,14 @@ const TyreCard = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 md:gap-4 gap-4 lg:gap-2 justify-center">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 md:gap-4 gap-4 lg:gap-4 xl:gap-4 2xl:gap-4 justify-center">
         {filterData.slice(0, visibleItems).map((tyre, index) => (
-          <div
+          <a
             key={index}
-            className="relative max-w-xs rounded overflow-hidden 
-      shadow-lg border p-4 transition-transform border-gray-300
-      duration-300 ease-in-out hover:shadow-2xl"
+            href={`https:${tyre.url}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="relative max-w-xs rounded overflow-hidden shadow-lg border p-2 transition-transform border-gray-300 duration-300 ease-in-out hover:shadow-2xl"
           >
             <div
               className="absolute right-0 bottom-3 w-40 h-40 bg-cover bg-no-repeat"
@@ -112,28 +118,23 @@ const TyreCard = () => {
               <p className="text-gray-600">{tyre.model_display_name}</p>
               <p className="text-gray-600">{tyre.variant_name}</p>
               <div className="mt-4 flex items-center">
-                <div
-                  className="bg-green-500 text-white text-sm px-2 py-1 rounded flex items-center"
-                  dangerouslySetInnerHTML={{ __html: tyre.tyre_rating }}
-                ></div>
+                <div className="bg-green-500 text-white px-1 rounded flex items-center">
+                  <FontAwesomeIcon icon={faStar} className="text-sm" />
+                  <span className="pl-1 text-sm font-bold pr-1">4</span>
+                </div>
+                <p className="text-black text-sm pl-1 hover:underline">
+                  321 Reviews
+                </p>
               </div>
-              <div className="mt-4 text-xl font-bold text-gray-800">
+              <div className="pt-4 text-xl font-bold text-gray-800">
                 ₹{tyre.price}
               </div>
-              <div className="mt-2 text-green-500 text-sm">Offer available</div>
-              <div className="mt-2 text-gray-600">
+              <div className="pt-2 text-green-500 text-sm">Offer available</div>
+              <div className="pt-2 text-gray-600 text-sm">
                 {tyre.tyre_type_display_name}
               </div>
-              <a
-                href={`https:${tyre.url}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-4 text-blue-500 underline"
-              >
-                View Details
-              </a>
             </div>
-          </div>
+          </a>
         ))}
       </div>
 

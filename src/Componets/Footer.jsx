@@ -32,76 +32,76 @@ const Footer = () => {
               className="w-[150px] mb-2.5 mx-auto md:mx-0"
             />
             <div className="max-w-[300px] mx-auto md:mx-0">
-              <h3 className="text-[20px] font-bold mb-2.5 pt-3">
-                The best look anytime, anywhere.
+              <h3 className="text-xl font-bold mb-2.5 pt-3">
+                The Best Performance anytime, anywhere.
               </h3>
               <p className="text-[16px] leading-6">
-                Find the perfect jewelry for every occasion, with collections
-                designed to make you shine.
+              Find the perfect tires for every journey, with collections designed to keep you safe and on the road.
               </p>
             </div>
           </div>
-          <div className="flex-1 min-w-[200px] text-center md:text-left">
-            <h3 className="text-[18px] mb-2.5">For Her</h3>
+          <div className="flex-1 min-w-[200px] text-center md:text-left pt-2 pl-0 md:pl-10">
+            <h3 className="text-xl mb-2.5 font-bold ">About Us</h3>
             <ul className="list-none">
               <li className="mb-2">
                 <a href="#" className="text-white no-underline hover:underline">
-                  Women Jeans
+                  Milestones
                 </a>
               </li>
               <li className="mb-2">
                 <a href="#" className="text-white no-underline hover:underline">
-                  Tops and Shirts
+                  Awards & Achievements
                 </a>
               </li>
               <li className="mb-2">
                 <a href="#" className="text-white no-underline hover:underline">
-                  Women Jackets
+                  Research & Design
+                </a>
+              </li>
+
+              <li className="mb-2">
+                <a href="#" className="text-white no-underline hover:underline">
+                  Careers
                 </a>
               </li>
               <li className="mb-2">
                 <a href="#" className="text-white no-underline hover:underline">
-                  Heels and Flats
-                </a>
-              </li>
-              <li className="mb-2">
-                <a href="#" className="text-white no-underline hover:underline">
-                  Women Accessories
+                  Our Presence
                 </a>
               </li>
             </ul>
           </div>
           <div className="flex-1 min-w-[200px] text-center md:text-left">
-            <h3 className="text-[18px] mb-2.5">For Him</h3>
+            <h3 className="text-xl mb-2.5 pt-2 font-bold">Our Products</h3>
             <ul className="list-none">
               <li className="mb-2">
                 <a href="#" className="text-white no-underline hover:underline">
-                  <i className="fa-solid fa-angle-right"></i> Men Jeans
+                  Tyres
                 </a>
               </li>
               <li className="mb-2">
                 <a href="#" className="text-white no-underline hover:underline">
-                  <i className="fa-solid fa-angle-right"></i> Men Shirts
+                  Sports Goods
                 </a>
               </li>
               <li className="mb-2">
                 <a href="#" className="text-white no-underline hover:underline">
-                  <i className="fa-solid fa-angle-right"></i> Men Shoes
+                  Funskool
                 </a>
               </li>
               <li className="mb-2">
                 <a href="#" className="text-white no-underline hover:underline">
-                  <i className="fa-solid fa-angle-right"></i> Men Accessories
+                  Paints & Coats
                 </a>
               </li>
               <li className="mb-2">
                 <a href="#" className="text-white no-underline hover:underline">
-                  <i className="fa-solid fa-angle-right"></i> Men Jackets
+                  PreTreads
                 </a>
               </li>
             </ul>
           </div>
-          <div className="flex-1 min-w-[200px] text-center md:text-left">
+          <div className="flex-1 min-w-[200px] text-center md:text-left pt-2">
             <h3 className="text-[18px] mb-2.5">Subscribe to our newsletter</h3>
             <form onSubmit={handleSubmit} className="flex flex-col gap-2.5">
               <input
@@ -111,7 +111,7 @@ const Footer = () => {
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="p-2.5 text-[16px] border border-gray-300 rounded-md w-full box-border"
+                className="p-2.5 text-[16px] border border-gray-300 rounded-md w-full box-border text-black"
               />
               <button
                 type="submit"
@@ -125,36 +125,37 @@ const Footer = () => {
                 {thankYouMessage}
               </div>
             )}
-            <div className="flex mt-5 justify-center md:justify-start gap-5">
+            <div className="flex mt-5 justify-center md:justify-center gap-5">
               <a
-                href="https://facebook.com"
+                href=""
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white hover:text-blue-600"
+                className="text-white hover:text-blue-600 transition-transform duration-300 transform hover:-translate-y-2"
               >
                 <FontAwesomeIcon icon={faFacebook} size="2x" />
               </a>
+
               <a
-                href="https://instagram.com"
+                href=""
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white hover:text-pink-600"
+                className="text-white hover:text-pink-600 transition-transform duration-300 transform hover:-translate-y-2"
               >
                 <FontAwesomeIcon icon={faInstagram} size="2x" />
               </a>
               <a
-                href="https://twitter.com"
+                href=""
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white hover:text-blue-400"
+                className="text-white hover:text-blue-400 transition-transform duration-300 transform hover:-translate-y-2"
               >
                 <FontAwesomeIcon icon={faTwitter} size="2x" />
               </a>
               <a
-                href="https://reddit.com"
+                href=""
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white hover:text-red-600"
+                className="text-white hover:text-red-600 transition-transform duration-300 transform hover:-translate-y-2"
               >
                 <FontAwesomeIcon icon={faReddit} size="2x" />
               </a>
@@ -163,9 +164,12 @@ const Footer = () => {
         </div>
         <div className="text-center pt-2.5 border-t border-white text-[14px]">
           <p className="m-[5px]">
-            Copyright © 2024 Jewellery. Powered by Jewellery.
+            © 2024 TyrePlex Technologies & Commerce Pvt. Ltd. All Rights
+            Reserved.
           </p>
-          <p className="m-[5px]">Design & Developed by Sounak Guin</p>
+          <p className="m-[5px]">
+            Design & Developed by TyrePlex Technologies & Commerce Pvt. Ltd
+          </p>
         </div>
       </div>
     </footer>
