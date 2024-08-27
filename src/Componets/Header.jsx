@@ -103,6 +103,8 @@ export default function Header() {
               arrows={false}
               autoPlaySpeed={2000}
               transitionDuration={5000}
+              swipeable={true}
+              draggable={true}
               removeArrowOnDeviceType={["tablet", "mobile"]}
               className="carousel"
             >

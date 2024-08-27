@@ -18,3 +18,7 @@ body {
   overflow: -moz-scrollbars-none;
   -ms-overflow-style: none;
 }
+
+.carousel {
+  touch-action: pan-y; 
+}
