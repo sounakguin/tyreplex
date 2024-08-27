@@ -6,7 +6,8 @@ import {
   faFilter,
   faSort,
   faStar,
-  faChevronDown
+  faChevronDown,
+  faTimes,
 } from "@fortawesome/free-solid-svg-icons";
 
 const ITEMS_PER_PAGE = 12;
@@ -54,9 +55,7 @@ const TyreCard = () => {
 
   return (
     <div className="bg-white mt-0 md:mt-5 h-auto w-full md:w-11/12 lg:w-11/12 mx-auto p-4 rounded-md shadow-md border border-gray-300">
-      <p className="text-lg font-semibold pb-6">
-      Tyres sold by this Dealer
-      </p>
+      <p className="text-lg font-semibold pb-6">Tyres sold by this Dealer</p>
       <div className="hidden md:block">
         <div className="flex flex-col md:flex-row justify-between mb-4 ">
           <div className="flex justify-start md:pl-3 ">
@@ -149,7 +148,7 @@ const TyreCard = () => {
             className="border border-blue-500 text-black hover:text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors"
           >
             View More
-            <FontAwesomeIcon icon={faChevronDown} className="pl-2"/>
+            <FontAwesomeIcon icon={faChevronDown} className="pl-2" />
           </button>
         </div>
       )}
@@ -172,8 +171,14 @@ const TyreCard = () => {
       </div>
 
       {isFilterOpen && (
-        <div className="fixed inset-0 bg-white flex justify-center items-center z-50">
-          <div className="bg-white w-11/12 p-4 rounded shadow-lg">
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+          <div className="bg-white w-11/12 p-4 rounded shadow-lg relative">
+            <button
+              onClick={() => setIsFilterOpen(false)}
+              className="absolute top-2 right-2 text-gray-600 hover:text-gray-900"
+            >
+              <FontAwesomeIcon icon={faTimes} size="lg" />
+            </button>
             <h3 className="text-lg font-semibold mb-4">Filter By Brand</h3>
             <select
               value={drop}
@@ -197,8 +202,14 @@ const TyreCard = () => {
       )}
 
       {isSortOpen && (
-        <div className="fixed inset-0 bg-white flex justify-center items-center z-50">
-          <div className="bg-white w-11/12 p-4 rounded shadow-lg">
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+          <div className="bg-white w-11/12 p-4 rounded shadow-lg relative">
+            <button
+              onClick={() => setIsSortOpen(false)}
+              className="absolute top-2 right-2 text-gray-600 hover:text-gray-900"
+            >
+              <FontAwesomeIcon icon={faTimes} size="lg" />
+            </button>
             <h3 className="text-lg font-semibold mb-4">Sort By Price</h3>
             <select
               value={sortOrder}
