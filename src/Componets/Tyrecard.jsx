@@ -47,31 +47,31 @@ const TyreCard = () => {
   }
 
   return (
-    <div className="bg-white h-auto w-full md:w-11/12 lg:w-11/12 mx-auto p-4 rounded-md shadow-md border border-gray-300">
+    <div className="bg-white mt-0 md:mt-5 h-auto w-full md:w-11/12 lg:w-11/12 mx-auto p-4 rounded-md shadow-md border border-gray-300">
       <div className="hidden md:block">
         <div className="flex flex-col md:flex-row justify-between mb-4 ">
-         <div className="flex justify-start">
-         <select
-            onChange={handleDropChange}
-            value={drop}
-            className="p-2 border rounded mb-2 md:mb-0 border-black"
-          >
-            <option value="">Filter By</option>
-            <option value="Apollo">Apollo</option>
-            <option value="MRF">MRF</option>
-            <option value="Bridgestone">Bridgestone</option>
-            <option value="CEAT">CEAT</option>
-          </select>
-          <select
-            onChange={handleSortOrderChange}
-            value={sortOrder}
-            className="p-2 border rounded mb-2 md:mb-0  border-black ml-5"
-          >
-            <option value="">Sort By Price</option>
-            <option value="lowToHigh">Low to High</option>
-            <option value="highToLow">High to Low</option>
-          </select>
-         </div>
+          <div className="flex justify-start">
+            <select
+              onChange={handleDropChange}
+              value={drop}
+              className="p-2 border rounded mb-2 md:mb-0 border-black"
+            >
+              <option value="">Filter By</option>
+              <option value="Apollo">Apollo</option>
+              <option value="MRF">MRF</option>
+              <option value="Bridgestone">Bridgestone</option>
+              <option value="CEAT">CEAT</option>
+            </select>
+            <select
+              onChange={handleSortOrderChange}
+              value={sortOrder}
+              className="p-2 border rounded mb-2 md:mb-0  border-black ml-5"
+            >
+              <option value="">Sort By Price</option>
+              <option value="lowToHigh">Low to High</option>
+              <option value="highToLow">High to Low</option>
+            </select>
+          </div>
           <div className="flex justify-end rounded-md border-2 border-blue-500 overflow-hidden max-w-md mr-3 font-[sans-serif]">
             <input
               type="text"
@@ -90,11 +90,13 @@ const TyreCard = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 md:gap-4 gap-4 lg:gap-2 justify-center">
         {filterData.slice(0, visibleItems).map((tyre, index) => (
           <div
             key={index}
-            className="relative max-w-xs rounded overflow-hidden shadow-lg border p-4 transition-transform duration-300 ease-in-out hover:shadow-2xl"
+            className="relative max-w-xs rounded overflow-hidden 
+      shadow-lg border p-4 transition-transform border-gray-300
+      duration-300 ease-in-out hover:shadow-2xl"
           >
             <div
               className="absolute right-0 bottom-3 w-40 h-40 bg-cover bg-no-repeat"
@@ -134,6 +136,7 @@ const TyreCard = () => {
           </div>
         ))}
       </div>
+
       {visibleItems < tyres.data.length && (
         <div className="mt-4 text-center">
           <button

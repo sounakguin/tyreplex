@@ -16,7 +16,7 @@ export default function Askquestion() {
 
   return (
     <div>
-      <div className="bg-white h-auto w-full md:w-11/12 lg:w-11/12 mx-auto p-4 rounded-md shadow-md border border-gray-300">
+      <div className="bg-white mt-0 md:mt-5 md:mb-5 h-auto w-full md:w-11/12 lg:w-11/12 mx-auto p-4 rounded-md shadow-md border border-gray-300">
       <div className="">
         <div className="flex">
         <div className="">

@@ -9,7 +9,7 @@ export default function Paymentmode() {
         Home / Tyre Dealers / Tyre Dealers Ghaziabad / SHREE HEMKUNT TYRES AND
         SERVICES
       </div>
-    <div className="bg-white h-auto w-full md:w-11/12 lg:w-11/12 mx-auto p-4 rounded-md shadow-md border border-gray-300">
+    <div className="bg-white mt-0 md:mt-5 h-auto w-full md:w-11/12 lg:w-11/12 mx-auto p-4 rounded-md shadow-md border border-gray-300">
       
       <div className="">
         <div className="text-lg font-semibold mb-4">Payment Mode</div>

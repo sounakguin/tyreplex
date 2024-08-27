@@ -24,8 +24,8 @@ export default function Dealsin() {
   };
 
   return (
-    <div className="bg-white h-auto w-full md:w-11/12 lg:w-11/12 mx-auto p-4 rounded-md shadow-md border border-gray-300">
-      <p className="text-xl font-semibold mb-4">Deals in</p>
+    <div className="bg-white mt-0 md:mt-5 h-auto w-full md:w-11/12 lg:w-11/12 mx-auto p-4 rounded-md shadow-md border border-gray-300">
+      <p className="text-lg font-semibold mb-4">Deals in</p>
       <div>
         <MultiCarousel
           responsive={responsive1}
@@ -38,8 +38,8 @@ export default function Dealsin() {
           className="carousel"
         >
           {tires.map((details, index) => (
-            <div key={index} className="px-2">
-              <div className="bg-white shadow-md rounded-lg p-4 flex justify-center items-center border border-gray-300">
+            <div key={index} className="pr-4">
+              <div className="bg-white shadow-sm rounded-lg p-4 flex cursor-pointer justify-center items-center border border-gray-300">
                 <img
                   src={details.Image}
                   alt="logo"

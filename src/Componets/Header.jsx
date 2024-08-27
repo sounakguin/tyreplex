@@ -46,7 +46,7 @@ export default function Header() {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <div className="bg-white h-auto w-full md:w-11/12 lg:w-11/12 mx-auto p-4 rounded-md shadow-md border border-gray-300">
+    <div className="bg-white mt-0 md:mt-5 h-auto w-full md:w-11/12 lg:w-11/12 mx-auto p-4 rounded-md shadow-md border border-gray-300">
       <div className="container mx-auto p-4">
         <div className="flex flex-col-reverse md:flex-row gap-4">
           <div className="md:w-1/2 flex flex-col gap-4">
@@ -119,7 +119,7 @@ export default function Header() {
                   src="/Images/data.jpg"
                   alt="Exterior view of Shree Hemkunt Tyres"
                   loading="lazy"
-                  className="md:h-52 md:w-auto w-full border border-black rounded-xl"
+                  className="md:h-52 md:w-auto w-full border border-black rounded-xl cursor-pointer"
                 />
               </div>
               <div className="px-2">
@@ -127,7 +127,7 @@ export default function Header() {
                   src="/Images/data2.jpg"
                   alt="Service in progress at Shree Hemkunt Tyres"
                   loading="lazy"
-                  className="md:h-52 md:w-auto w-full border-black rounded-xl"
+                  className="md:h-52 md:w-auto w-full border-black rounded-xl cursor-pointer"
                 />
               </div>
               <div className="px-2">
@@ -135,7 +135,7 @@ export default function Header() {
                   src="/Images/data1.jpg"
                   alt="Interior view of Shree Hemkunt Tyres"
                   loading="lazy"
-                  className="md:h-52 md:w-auto w-full border-black rounded-xl"
+                  className="md:h-52 md:w-auto w-full border-black rounded-xl cursor-pointer"
                 />
               </div>
               <div className="px-2">
@@ -143,7 +143,7 @@ export default function Header() {
                   src="/Images/data2.jpg"
                   alt="Service in progress at Shree Hemkunt Tyres"
                   loading="lazy"
-                  className="md:h-52 md:w-auto w-full border-black rounded-xl"
+                  className="md:h-52 md:w-auto w-full border-black rounded-xl cursor-pointer"
                 />
               </div>
             </MultiCarousel>
@@ -166,7 +166,7 @@ export default function Header() {
         </div>
 
         <div>
-          <div className="flex pt-5 font-bold">
+          <div className="flex pt-5 pb-3 font-bold">
             <p className="">2278 </p>
             <p className="pl-2">Google Reviews</p>
           </div>
@@ -183,8 +183,8 @@ export default function Header() {
             className="carousel"
           >
             {reviews.map((details, index) => (
-              <div key={index} className="px-2">
-                <div className="flex flex-col items-start p-4 border border-gray-200 rounded-lg shadow-lg gap-2">
+              <div key={index} className="pr-4">
+                <div className="flex flex-col items-start p-4 border cursor-pointer border-gray-300 rounded-lg shadow-sm gap-2">
                   <div className="flex items-center gap-2">
                     <img
                       src={details.Image}
