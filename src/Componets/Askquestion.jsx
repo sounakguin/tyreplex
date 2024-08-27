@@ -27,11 +27,15 @@ export default function Askquestion() {
           </div>
           {submitted ? (
             <div className="text-lg font-semibold text-center md:text-left">
-              Thank you for your question! We will get back to you within 24 hours.
+              Thank you for your question! We will get back to you within 24
+              hours.
             </div>
           ) : (
             <>
-              <form onSubmit={handleSubmit} className="flex flex-col md:flex-row items-center gap-2">
+              <form
+                onSubmit={handleSubmit}
+                className="flex flex-col md:flex-row items-center gap-2"
+              >
                 <input
                   type="email"
                   id="newsletter-email"

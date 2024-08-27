@@ -3,7 +3,6 @@ import "react-multi-carousel/lib/styles.css";
 import MultiCarousel from "react-multi-carousel";
 
 export default function Dealsin() {
-
   const responsive1 = {
     superLargeDesktop: {
       breakpoint: { max: 4000, min: 3000 },

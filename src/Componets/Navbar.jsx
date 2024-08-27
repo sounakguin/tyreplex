@@ -369,7 +369,7 @@ export default function Navbar() {
                         Apollo Tyres
                       </Link>
                     </li>
-                    {/* Add more items as needed */}
+                    
                   </ul>
                 </div>
               )}
