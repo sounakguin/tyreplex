@@ -14,7 +14,7 @@ export default function Dealer() {
           />
           <div className="p-4">
             <p className="text-base font-medium">Wheel Balancing</p>
-            <button className="mt-2 bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none">
+            <button className="text-xs md:text-md  mt-2 bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none">
               Book Now
             </button>
           </div>
@@ -27,7 +27,7 @@ export default function Dealer() {
           />
           <div className="p-4">
             <p className="text-base font-medium">Wheel Balancing</p>
-            <button className="mt-2 bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none">
+            <button className="text-xs md:text-md mt-2 bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none">
               Book Now
             </button>
           </div>
