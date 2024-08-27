@@ -99,7 +99,7 @@ const TyreCard = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4  3xl:grid-cols-5  gap-x-1 gap-y-6 justify-center items-center">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 2xl:grid-cols-5 gap-x-1 gap-y-6 justify-center items-center">
         {filterData.slice(0, visibleItems).map((tyre, index) => (
           <a
             key={index}
