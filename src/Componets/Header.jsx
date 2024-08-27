@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "react-multi-carousel/lib/styles.css";
 import MultiCarousel from "react-multi-carousel";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -43,6 +43,8 @@ const responsive1 = {
 };
 
 export default function Header() {
+  const [isHovered, setIsHovered] = useState(false);
+
   return (
     <div className="bg-white h-auto w-full md:w-11/12 lg:w-11/12 mx-auto p-4 rounded-md shadow-md border border-gray-300">
       <div className="container mx-auto p-4">
@@ -95,10 +97,14 @@ export default function Header() {
           </div>
 
           {/* Right Div - Carousel */}
-          <div className="md:w-1/2 ">
+          <div
+            className="md:w-1/2"
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+          >
             <MultiCarousel
               responsive={responsive}
-              autoPlay
+              autoPlay={!isHovered}
               infinite
               arrows={false}
               autoPlaySpeed={2000}
@@ -199,16 +205,6 @@ export default function Header() {
 }
 
 const reviews = [
-  {
-    Image: "/Images/unnamed.png",
-    Name: "Rohit Bhati",
-    Data: "Went for Tyre change. Ultimate service by shoppe boys. Owner behavior very cool. Guide as per ur budget. Highly recommend",
-  },
-  {
-    Image: "/Images/unnamed.png",
-    Name: "Rohit Bhati",
-    Data: "Went for Tyre change. Ultimate service by shoppe boys. Owner behavior very cool. Guide as per ur budget. Highly recommend",
-  },
   {
     Image: "/Images/unnamed.png",
     Name: "Rohit Bhati",

@@ -7,18 +7,20 @@
 }
 
 ::-webkit-scrollbar {
-  display: none;
+  display: none; /* Hide scrollbar for WebKit browsers */
 }
 
 html {
-  scrollbar-width: none;
+  scrollbar-width: none; /* Hide scrollbar for Firefox */
 }
 
 body {
-  overflow: -moz-scrollbars-none;
-  -ms-overflow-style: none;
+  overflow: hidden; /* Hide scrollbar for other browsers */
 }
 
+/* Specific styles for carousel */
 .carousel {
-  touch-action: pan-y; 
+  touch-action: pan-x; /* Enable horizontal swipe */
+  overflow: hidden; /* Prevent unintended scrolling */
+  position: relative; /* Ensure correct positioning */
 }
