@@ -166,7 +166,7 @@ const TyreCard = () => {
       {isFilterOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
           <div className="bg-white w-11/12 p-4 rounded shadow-lg">
-            <h3 className="text-lg font-semibold mb-4">Filter By Brand</h3>
+          
             <select
               value={drop}
               onChange={handleDropChange}
@@ -178,12 +178,7 @@ const TyreCard = () => {
               <option value="Bridgestone">Bridgestone</option>
               <option value="CEAT">CEAT</option>
             </select>
-            <button
-              onClick={() => setIsFilterOpen(false)}
-              className="mt-4 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 w-full"
-            >
-              Apply Filter
-            </button>
+            
           </div>
         </div>
       )}
@@ -192,7 +187,7 @@ const TyreCard = () => {
       {isSortOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
           <div className="bg-white w-11/12 p-4 rounded shadow-lg">
-            <h3 className="text-lg font-semibold mb-4">Sort By Price</h3>
+          
             <select
               value={sortOrder}
               onChange={handleSortOrderChange}
@@ -202,12 +197,7 @@ const TyreCard = () => {
               <option value="lowToHigh">Low to High</option>
               <option value="highToLow">High to Low</option>
             </select>
-            <button
-              onClick={() => setIsSortOpen(false)}
-              className="mt-4 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 w-full"
-            >
-              Apply Sort
-            </button>
+           
           </div>
         </div>
       )}
