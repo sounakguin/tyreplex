@@ -5,7 +5,7 @@ import { faCheck } from "@fortawesome/free-solid-svg-icons";
 export default function Paymentmode() {
   return (
 <>
-    <div className="text-sm text-gray-500 mb-4">
+    <div className="text-sm text-black mb-4 md:pl-16 pl-3 pt-7">
         Home / Tyre Dealers / Tyre Dealers Ghaziabad / SHREE HEMKUNT TYRES AND
         SERVICES
       </div>

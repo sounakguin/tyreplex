@@ -50,10 +50,11 @@ const TyreCard = () => {
     <div className="bg-white h-auto w-full md:w-11/12 lg:w-11/12 mx-auto p-4 rounded-md shadow-md border border-gray-300">
       <div className="hidden md:block">
         <div className="flex flex-col md:flex-row justify-between mb-4 ">
-          <select
+         <div className="flex justify-start">
+         <select
             onChange={handleDropChange}
             value={drop}
-            className="p-2 border rounded mb-2 md:mb-0"
+            className="p-2 border rounded mb-2 md:mb-0 border-black"
           >
             <option value="">Filter By</option>
             <option value="Apollo">Apollo</option>
@@ -64,13 +65,14 @@ const TyreCard = () => {
           <select
             onChange={handleSortOrderChange}
             value={sortOrder}
-            className="p-2 border rounded mb-2 md:mb-0"
+            className="p-2 border rounded mb-2 md:mb-0  border-black ml-5"
           >
             <option value="">Sort By Price</option>
             <option value="lowToHigh">Low to High</option>
             <option value="highToLow">High to Low</option>
           </select>
-          <div className="flex rounded-md border-2 border-blue-500 overflow-hidden max-w-md mx-auto font-[sans-serif]">
+         </div>
+          <div className="flex justify-end rounded-md border-2 border-blue-500 overflow-hidden max-w-md mr-3 font-[sans-serif]">
             <input
               type="text"
               placeholder="Search Something..."
