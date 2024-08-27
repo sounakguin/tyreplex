@@ -1,32 +1,37 @@
 import React, { useState } from "react";
 import tyres from "./Tyres.json";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { faSearch, faFilter, faSort } from "@fortawesome/free-solid-svg-icons";
+
 const ITEMS_PER_PAGE = 12;
 
 const TyreCard = () => {
   const [visibleItems, setVisibleItems] = useState(ITEMS_PER_PAGE);
-  const [drop, setdrop] = useState("");
-  const [sortorder, setsortorder] = useState("");
-  const [query, setqury] = useState("");
+  const [drop, setDrop] = useState("");
+  const [sortOrder, setSortOrder] = useState("");
+  const [query, setQuery] = useState("");
+  const [isFilterOpen, setIsFilterOpen] = useState(false);
+  const [isSortOpen, setIsSortOpen] = useState(false);
 
   const handleLoadMore = () => {
     setVisibleItems((prevVisibleItems) => prevVisibleItems + ITEMS_PER_PAGE);
   };
 
-  const handeldrop = (e) => {
-    setdrop(e.target.value);
+  const handleDropChange = (e) => {
+    setDrop(e.target.value);
+    setIsFilterOpen(false); // Close modal on selection
   };
 
-  const handleSortOrder = (e) => {
-    setsortorder(e.target.value);
+  const handleSortOrderChange = (e) => {
+    setSortOrder(e.target.value);
+    setIsSortOpen(false); // Close modal on selection
   };
 
-  const handelsearch = (e) => {
-    setqury(e.target.value);
+  const handleSearchChange = (e) => {
+    setQuery(e.target.value);
   };
 
-  const filterdata = tyres.data.filter((tyre) => {
+  const filterData = tyres.data.filter((tyre) => {
     const dropdown = tyre.make_display_name === drop || drop === "";
     const searchQuery =
       tyre.make_display_name.toLowerCase().includes(query.toLowerCase()) ||
@@ -35,17 +40,18 @@ const TyreCard = () => {
     return dropdown && searchQuery;
   });
 
-  if (sortorder === "lowToHigh") {
-    filterdata.sort((a, b) => a.price - b.price);
-  } else if (sortorder === "highToLow") {
-    filterdata.sort((a, b) => b.price - a.price);
+  if (sortOrder === "lowToHigh") {
+    filterData.sort((a, b) => a.price - b.price);
+  } else if (sortOrder === "highToLow") {
+    filterData.sort((a, b) => b.price - a.price);
   }
 
   return (
     <div className="bg-white h-auto w-full md:w-11/12 lg:w-11/12 mx-auto p-4 rounded-md shadow-md border border-gray-300">
+      {/* Search, Filter, and Sort Controls */}
       <div className="flex flex-col md:flex-row justify-between mb-4">
         <select
-          onChange={handeldrop}
+          onChange={handleDropChange}
           value={drop}
           className="p-2 border rounded mb-2 md:mb-0"
         >
@@ -56,40 +62,34 @@ const TyreCard = () => {
           <option value="CEAT">CEAT</option>
         </select>
         <select
-          onChange={handleSortOrder}
-          value={sortorder}
+          onChange={handleSortOrderChange}
+          value={sortOrder}
           className="p-2 border rounded mb-2 md:mb-0"
         >
           <option value="">Sort By Price</option>
           <option value="lowToHigh">Low to High</option>
           <option value="highToLow">High to Low</option>
         </select>
-        <div class="flex rounded-md border-2 border-blue-500 overflow-hidden max-w-md mx-auto font-[sans-serif]">
+        <div className="flex rounded-md border-2 border-blue-500 overflow-hidden max-w-md mx-auto font-[sans-serif]">
           <input
-            type="email"
+            type="text"
             placeholder="Search Something..."
-            class="w-full outline-none bg-white text-gray-600 text-sm px-4 py-3"
+            className="w-full outline-none bg-white text-gray-600 text-sm px-4 py-3"
             value={query}
-            onChange={handelsearch}
+            onChange={handleSearchChange}
           />
           <button
             type="button"
-            class="flex items-center justify-center bg-[#007bff] px-5"
+            className="flex items-center justify-center bg-[#007bff] px-5"
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 192.904 192.904"
-              width="16px"
-              class="fill-white"
-            >
-              <path d="m190.707 180.101-47.078-47.077c11.702-14.072 18.752-32.142 18.752-51.831C162.381 36.423 125.959 0 81.191 0 36.422 0 0 36.423 0 81.193c0 44.767 36.422 81.187 81.191 81.187 19.688 0 37.759-7.049 51.831-18.751l47.079 47.078a7.474 7.474 0 0 0 5.303 2.197 7.498 7.498 0 0 0 5.303-12.803zM15 81.193C15 44.694 44.693 15 81.191 15c36.497 0 66.189 29.694 66.189 66.193 0 36.496-29.692 66.187-66.189 66.187C44.693 147.38 15 117.689 15 81.193z"></path>
-            </svg>
+            <FontAwesomeIcon icon={faSearch} className="text-white" />
           </button>
         </div>
       </div>
 
+      {/* Tyre Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-        {filterdata.slice(0, visibleItems).map((tyre, index) => (
+        {filterData.slice(0, visibleItems).map((tyre, index) => (
           <div
             key={index}
             className="relative max-w-xs rounded overflow-hidden shadow-lg border p-4 transition-transform duration-300 ease-in-out hover:shadow-2xl"
@@ -140,6 +140,75 @@ const TyreCard = () => {
           >
             View More
           </button>
+        </div>
+      )}
+
+      {/* Mobile Bottom Menu */}
+      <div className="fixed inset-x-0 bottom-0 md:hidden bg-white shadow-lg border-t border-gray-300 flex justify-around items-center p-2">
+        <button
+          onClick={() => setIsFilterOpen(!isFilterOpen)}
+          className="text-gray-600"
+        >
+          <FontAwesomeIcon icon={faFilter} size="lg" />
+          <p className="text-xs">Filter</p>
+        </button>
+        <button
+          onClick={() => setIsSortOpen(!isSortOpen)}
+          className="text-gray-600"
+        >
+          <FontAwesomeIcon icon={faSort} size="lg" />
+          <p className="text-xs">Sort</p>
+        </button>
+      </div>
+
+      {/* Filter Modal for Mobile */}
+      {/* Filter Modal for Mobile */}
+      {isFilterOpen && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+          <div className="bg-white w-11/12 p-4 rounded shadow-lg">
+            <h3 className="text-lg font-semibold mb-4">Filter By Brand</h3>
+            <select
+              value={drop}
+              onChange={handleDropChange}
+              className="p-2 border rounded w-full"
+            >
+              <option value="">All Brands</option>
+              <option value="Apollo">Apollo</option>
+              <option value="MRF">MRF</option>
+              <option value="Bridgestone">Bridgestone</option>
+              <option value="CEAT">CEAT</option>
+            </select>
+            <button
+              onClick={() => setIsFilterOpen(false)}
+              className="mt-4 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 w-full"
+            >
+              Apply Filter
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/* Sort Modal for Mobile */}
+      {isSortOpen && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+          <div className="bg-white w-11/12 p-4 rounded shadow-lg">
+            <h3 className="text-lg font-semibold mb-4">Sort By Price</h3>
+            <select
+              value={sortOrder}
+              onChange={handleSortOrderChange}
+              className="p-2 border rounded w-full"
+            >
+              <option value="">Select Order</option>
+              <option value="lowToHigh">Low to High</option>
+              <option value="highToLow">High to Low</option>
+            </select>
+            <button
+              onClick={() => setIsSortOpen(false)}
+              className="mt-4 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 w-full"
+            >
+              Apply Sort
+            </button>
+          </div>
         </div>
       )}
     </div>
