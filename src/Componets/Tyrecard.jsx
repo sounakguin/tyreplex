@@ -55,7 +55,7 @@ const TyreCard = () => {
     <div className="bg-white mt-0 md:mt-5 h-auto w-full md:w-11/12 lg:w-11/12 mx-auto p-4 rounded-md shadow-md border border-gray-300">
       <div className="hidden md:block">
         <div className="flex flex-col md:flex-row justify-between mb-4 ">
-          <div className="flex justify-start">
+          <div className="flex justify-start md:pl-3 ">
             <select
               onChange={handleDropChange}
               value={drop}
@@ -95,14 +95,14 @@ const TyreCard = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 md:gap-4 gap-4 lg:gap-4 xl:gap-4 2xl:gap-4 justify-center">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-1 gap-y-6 justify-center items-center">
         {filterData.slice(0, visibleItems).map((tyre, index) => (
           <a
             key={index}
             href={`https:${tyre.url}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="relative max-w-xs rounded overflow-hidden shadow-lg border p-2 transition-transform border-gray-300 duration-300 ease-in-out hover:shadow-2xl"
+            className="relative max-w-xs w-full mx-auto rounded overflow-hidden shadow-lg border p-2 transition-transform border-gray-300 duration-300 ease-in-out hover:shadow-2xl"
           >
             <div
               className="absolute right-0 bottom-3 w-40 h-40 bg-cover bg-no-repeat"
