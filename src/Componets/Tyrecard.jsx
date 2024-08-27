@@ -162,7 +162,7 @@ const TyreCard = () => {
 
       {isFilterOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
-          <div className="bg-white w-11/12 p-4 rounded shadow-lg">
+          
             <select
               value={drop}
               onChange={handleDropChange}
@@ -174,13 +174,13 @@ const TyreCard = () => {
               <option value="Bridgestone">Bridgestone</option>
               <option value="CEAT">CEAT</option>
             </select>
-          </div>
+          
         </div>
       )}
 
       {isSortOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
-          <div className="bg-white w-11/12 p-4 rounded shadow-lg">
+        
             <select
               value={sortOrder}
               onChange={handleSortOrderChange}
@@ -190,7 +190,7 @@ const TyreCard = () => {
               <option value="lowToHigh">Low to High</option>
               <option value="highToLow">High to Low</option>
             </select>
-          </div>
+    
         </div>
       )}
     </div>
