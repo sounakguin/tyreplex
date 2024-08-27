@@ -19,12 +19,12 @@ const TyreCard = () => {
 
   const handleDropChange = (e) => {
     setDrop(e.target.value);
-    setIsFilterOpen(false); // Close modal on selection
+    setIsFilterOpen(false);
   };
 
   const handleSortOrderChange = (e) => {
     setSortOrder(e.target.value);
-    setIsSortOpen(false); // Close modal on selection
+    setIsSortOpen(false);
   };
 
   const handleSearchChange = (e) => {
@@ -143,17 +143,17 @@ const TyreCard = () => {
         </div>
       )}
 
-      <div className="fixed inset-x-0 bottom-0 md:hidden bg-white shadow-lg border-t border-gray-300 flex justify-around items-center p-2">
+      <div className="fixed inset-x-0 bottom-0 md:hidden bg-gray-300 shadow-lg border-t border-black flex justify-around items-center p-2">
         <button
           onClick={() => setIsFilterOpen(!isFilterOpen)}
-          className="text-gray-600"
+          className="text-black"
         >
           <FontAwesomeIcon icon={faFilter} size="lg" />
           <p className="text-xs">Filter</p>
         </button>
         <button
           onClick={() => setIsSortOpen(!isSortOpen)}
-          className="text-gray-600"
+          className="text-black"
         >
           <FontAwesomeIcon icon={faSort} size="lg" />
           <p className="text-xs">Sort</p>
@@ -161,8 +161,9 @@ const TyreCard = () => {
       </div>
 
       {isFilterOpen && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
-          
+        <div className="fixed inset-0 bg-black flex justify-center items-center z-50">
+          <div className="bg-white w-11/12 p-4 rounded shadow-lg">
+            <h3 className="text-lg font-semibold mb-4">Filter By Brand</h3>
             <select
               value={drop}
               onChange={handleDropChange}
@@ -174,13 +175,20 @@ const TyreCard = () => {
               <option value="Bridgestone">Bridgestone</option>
               <option value="CEAT">CEAT</option>
             </select>
-          
+            <button
+              onClick={() => setIsFilterOpen(false)}
+              className="mt-4 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 w-full"
+            >
+              Apply Filter
+            </button>
+          </div>
         </div>
       )}
 
       {isSortOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
-        
+          <div className="bg-white w-11/12 p-4 rounded shadow-lg">
+            <h3 className="text-lg font-semibold mb-4">Sort By Price</h3>
             <select
               value={sortOrder}
               onChange={handleSortOrderChange}
@@ -190,7 +198,13 @@ const TyreCard = () => {
               <option value="lowToHigh">Low to High</option>
               <option value="highToLow">High to Low</option>
             </select>
-    
+            <button
+              onClick={() => setIsSortOpen(false)}
+              className="mt-4 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 w-full"
+            >
+              Apply Sort
+            </button>
+          </div>
         </div>
       )}
     </div>

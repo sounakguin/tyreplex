@@ -46,7 +46,7 @@ export default function Header() {
   return (
     <div className="bg-white h-auto w-full md:w-11/12 lg:w-11/12 mx-auto p-4 rounded-md shadow-md border border-gray-300">
       <div className="container mx-auto p-4">
-        <div className="flex flex-col md:flex-row gap-4">
+        <div className="flex flex-col-reverse md:flex-row gap-4">
           <div className="md:w-1/2 flex flex-col gap-4">
             <h1 className="text-2xl font-bold">
               SHREE HEMKUNT TYRES AND SERVICES{" "}
